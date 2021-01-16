@@ -28,8 +28,6 @@ x = np.array(column_transform.fit_transform(x))
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=1/3)
 
-# print(x_train)
-
 linearRegressor = LinearRegression()
 
 linearRegressor.fit(x_train, y_train)
