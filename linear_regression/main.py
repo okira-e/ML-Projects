@@ -2,6 +2,7 @@ import sys
 
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import OneHotEncoder
@@ -28,11 +29,11 @@ x = np.array(column_transform.fit_transform(x))
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=1/3)
 
-linearRegressor = LinearRegression()
+linear_regressor = LinearRegression()
 
-linearRegressor.fit(x_train, y_train)
+linear_regressor.fit(x_train, y_train)
 
-y_pred = linearRegressor.predict(x_test)
+y_pred = linear_regressor.predict(x_test)
 
 np.set_printoptions(precision=2)
 print("Predicted results")
@@ -53,3 +54,8 @@ for i in range(len(x_test)):
 
 print("Average error margin on this test run:")
 print(sum/num)
+
+# Visualising the Training set results
+# plt.scatter(x_train, y_train, color='red')
+plt.plot(x_test, y_test, color='blue')
+plt.show()
