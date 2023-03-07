@@ -52,7 +52,7 @@ for i in range(len(x_test)):
         sum += abs(dif)
         num += 1
 
-print("Average error margin on this test run:")
+print("Average error margin on this run:")
 print(sum/num)
 
 # Visualising the Training set results
